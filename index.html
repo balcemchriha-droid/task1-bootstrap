@@ -4,6 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Dr Mohamed Essam</title>
+    <script src="assets/js/bootstrap.bundle.min.js"></script>
+    <script src="assets/js/main.js"></script>
     <link href="assets/css/bootstrap.min.css" rel="stylesheet">
     <link href="assets/css/style.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
@@ -36,7 +38,7 @@
              <div class="d-flex g-2 flex-row">
                 <button class="btn bg-turquoise rounded-3 text-light ">احجز  استشارة</button>
                 <button class="btn bg-beige border">EN</button>
-                <button class="btn bg-beige border">dark mode</button>
+                <button class="btn bg-beige border" id="darkModeBtn"><i class="bi bi-moon-fill"></i> </button>
             </div>
             </div>
         </div>
@@ -750,5 +752,15 @@ info@dressaam.com</p>
             </div>
         </div>
     </footer>
+    <script>
+        function darkMode(){
+            document.getElementById("darkModeBtn").addEventListener('click',function(){
+                const html = document.documentElement;
+                const isDark = html.getAttribute('data-bs-theme')=== 'dark';
+                html.setAttribute('data-bs-theme',isDark? 'light':'dark');
+                this.querySelector('i').className = isDark ? 'bi bi-moon-fill' : 'bi bi-sun-fill';
+            })
+        }
+    </script>
 </body>
 </html>
